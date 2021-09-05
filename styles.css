@@ -1,0 +1,203 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	height: 100vh;
+	background-color: #222;
+	font-size: 25px;
+	font-family: "Oswald", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* ------App container------ */
+.app-container {
+	width: 100%;
+	max-width: 400px;
+	height: 100vh;
+	max-height: 700px;
+	position: relative;
+	background-color: var(--secColor);
+}
+/* ------Header------ */
+.header {
+	width: 100%;
+	height: 150px;
+	position: relative;
+	color: var(--headText);
+}
+.header__clean-btn {
+	font-size: 2.5rem;
+	color: var(--clean);
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	transition: transform 0.5s ease;
+}
+.header__clean-btn:hover {
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+.header__date {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	position: absolute;
+	bottom: 0.2em;
+	left: 0.6em;
+}
+.header__time {
+	font-size: 3rem;
+	position: absolute;
+	bottom: 1em;
+	left: 0.3em;
+}
+/* ------App------ */
+.app {
+	width: 100%;
+	height: calc(100% - 150px);
+}
+.app__list {
+	overflow: auto;
+	list-style: none;
+	padding-left: 0;
+	height: calc(100% - 60px);
+	background-color: var(--secColor);
+}
+.app__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 2.2em;
+	padding: 1.3em 0;
+	border-bottom: 2px solid var(--secColor);
+	background: var(--bgColor);
+	color: var(--taskText);
+}
+.app__check,
+.app__delete {
+	font-size: 1.7rem;
+	display: grid;
+	place-items: center;
+}
+.app__check > *,
+.app__delete > * {
+	pointer-events: none;
+}
+.app__check:hover,
+.app__delete:hover {
+	cursor: pointer;
+}
+.app__task {
+	overflow: auto;
+	width: 100%;
+	margin: 0 1em;
+}
+.app__check {
+	margin-left: 0.5em;
+}
+.app__delete {
+	margin-right: 0.5em;
+}
+.app__delete:hover {
+	color: var(--trash);
+}
+.lineThrough {
+	text-decoration: line-through;
+	color: var(--through);
+}
+
+/* ------Add task------ */
+.app__add {
+	width: 100%;
+	height: 60px;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--bottomColor);
+	color: var(--botomText);
+	position: absolute;
+	bottom: 0;
+}
+.app__add-btn {
+	font-size: 2.5rem;
+	display: grid;
+	place-items: center;
+}
+.app__add-btn:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+.app__new-task {
+	width: 100%;
+	margin-left: 0.8em;
+	font-size: 25px;
+	padding: 0.2em 0.2em 0.2em 0.5em;
+	border: 1px solid var(--botomText);
+	border-radius: 5px;
+	background-color: var(--bottomColor);
+	color: var(--botomText);
+	box-sizing: border-box;
+}
+.app__new-task:hover {
+	outline: none;
+	box-shadow: 0 0 1px 1px var(--botomText);
+}
+.app__new-task:focus {
+	outline: none;
+	box-shadow: 0 0 1px 1px var(--botomText);
+}
+.app__new-task::placeholder {
+	color: var(--botomText);
+}
+.app__add-btn > * {
+	pointer-events: none;
+}
+.fa-check-circle {
+	color: var(--check);
+}
+.night {
+	--bgColor: linear-gradient(-25deg, #0f2027, #203a43, #2c5364);
+	--taskText: #ffff;
+	--headText: #ffff;
+	--botomText: #ffff;
+	--clean: #ffff;
+	--secColor: #2c5364;
+	--bottomColor: #0f2027;
+	--through: #ccc;
+	--check: #2ecc71;
+	--trash: #e74c3c;
+}
+.dawn-sunset {
+	--bgColor: linear-gradient(165deg, #f2994a, #f2c94c);
+	--taskText: #222;
+	--headText: #ffff;
+	--botomText: #f5d472;
+	--clean: #222;
+	--secColor: #f5d472;
+	--bottomColor: #222;
+	--through: #8b8b8b;
+	--check: #25a55a;
+	--trash: #e74c3c;
+}
+.day {
+	--bgColor: linear-gradient(160deg, #ffffff, #f2c94c);
+	--taskText: #222;
+	--headText: #ffff;
+	--botomText: #222;
+	--clean: #222;
+	--secColor: #f1d275;
+	--bottomColor: #ffff;
+	--through: #8b8b8b;
+	--check: #25a55a;
+	--trash: #e74c3c;
+}
+
+@media screen and (min-width: 361px) {
+	.app-container {
+		border-radius: 15px;
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/2e70ae9535.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Lista de tareas</title>
+	</head>
+	<body>
+		<div class="app-container">
+			<header class="header">
+				<div class="header__clean-btn" id="clean">
+					<i class="fas fa-sync-alt"></i>
+				</div>
+				<div class="header__time">
+					<span class="header__hours"></span>:
+					<span class="header__minutes"></span>
+				</div>
+				<div class="header__date" id="date"></div>
+			</header>
+			<main class="app">
+				<ul class="app__list" id="taskList"></ul>
+				<div class="app__add">
+					<span class="app__add-btn" id="addButton"
+						><i class="fas fa-plus-circle"></i
+					></span>
+					<input
+						type="text"
+						placeholder="Nueva tarea"
+						id="taskInput"
+						class="app__new-task"
+					/>
+				</div>
+			</main>
+		</div>
+		<script src="./app.js"></script>
+	</body>
+</html>
